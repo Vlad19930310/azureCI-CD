@@ -8,7 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    
+    - name: Setup Az-Acme CLI
+  # You may pin to the exact commit or the version.
+  # uses: az-acme/setup-cli-action@84fbdbae05257dad0fdc1d87166667492acd0fae
+      uses: az-acme/setup-cli-action@v1
+      with:
+    # Version of CLI to install
+        version: latest 
     - name: Azure Login
       uses: Azure/login@v1.4.6
 
